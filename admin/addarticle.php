@@ -8,9 +8,12 @@
 <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
 <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css'>
 <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.0/css/bootstrapValidator.min.css'><link rel="stylesheet" href="./style.css">
-
+<link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
+<form action="welcome.php">
+    <input class="button dashboardbutton" type="submit" value="Go Back" />
+</form>
 <!-- partial:index.partial.html -->
 <div class="container">
 
@@ -35,11 +38,11 @@
 <!-- Text input-->
 
 <div class="form-group">
-  <label class="col-md-4 control-label" >Author</label> 
+  <label class="col-md-4 control-label" >Subject</label> 
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
-  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-  <input name="author" placeholder="Author" class="form-control"  type="text">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-file"></i></span>
+  <input name="subject" placeholder="Subject" class="form-control"  type="text">
     </div>
   </div>
 </div>
@@ -47,11 +50,11 @@
 <!-- Text input-->
 
   <div class="form-group"> 
-  <label class="col-md-4 control-label">Subject</label>
+  <label class="col-md-4 control-label">Publisher</label>
     <div class="col-md-4 selectContainer">
     <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-file"></i></span>
-    <input type="text" name="subject" placeholder="Subject" class="form-control">
+    <input type="text" name="publisher" placeholder="Publisher" class="form-control">
       
   </div>
 </div>
@@ -59,11 +62,11 @@
 
 <!-- Text input-->
 <div class="form-group">
-  <label class="col-md-4 control-label">Publisher</label>  
+  <label class="col-md-4 control-label">Publication Date</label>  
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
-        <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-  <input name="publisher" placeholder="Publisher" class="form-control"  type="text">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+  <input name="publicationdate" placeholder="Publication Date" class="form-control" type="date">
     </div>
   </div>
 </div>
@@ -71,11 +74,11 @@
 <!-- Text input-->
 
 <div class="form-group">
-  <label class="col-md-4 control-label">Publication Date</label>  
+  <label class="col-md-4 control-label">Publication Place</label>  
   <div class="col-md-4 inputGroupContainer">
   <div class="input-group">
-  <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
-  <input  name="publicationdate" placeholder="Publication Date" class="form-control"  type="date">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+  <input  name="publicationplace" placeholder="Publication Place" class="form-control" type="text">
     </div>
   </div>
 </div>
@@ -83,28 +86,58 @@
 <!-- Text input-->
 
 <div class="form-group">
-  <label class="col-md-4 control-label" >Call Number</label> 
+  <label class="col-md-4 control-label" >Volume</label> 
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
-  <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-  <input name="callnumber" placeholder="Call Number" class="form-control"  type="text">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-file"></i></span>
+  <input name="volume" placeholder="Volume" class="form-control" type="text">
     </div>
   </div>
 </div>
 
 <div class="form-group">
-  <label class="col-md-4 control-label" >Accession Number</label> 
+  <label class="col-md-4 control-label" >Number</label> 
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
-  <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-  <input name="accessionnumber" placeholder="Acession Number" class="form-control"  type="text">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-file"></i></span>
+  <input name="number" placeholder="Number" class="form-control"  type="text">
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="col-md-4 control-label" >Series</label> 
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-file"></i></span>
+  <input name="series" placeholder="Series" class="form-control"  type="text">
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="col-md-4 control-label" >Pages</label> 
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-file"></i></span>
+  <input name="pages" placeholder="Pages" class="form-control"  type="text">
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="col-md-4 control-label" >Abstract</label> 
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-file"></i></span>
+  <input name="abstract" placeholder="Abstract" class="form-control"  type="text">
     </div>
   </div>
 </div>
 
 <!-- Button -->
 
-    <center><input type="submit" name="addarticle" class="btn btn-warning" ></center>
+    <center><input type="submit" name="addarticle" class="btn btn-danger" ></center>
   </div>
 </div>
 
@@ -130,16 +163,19 @@ require_once('connect.php');
 
 if(isset($_POST['addarticle'])){
     
-    $title = $_POST['title'];
-    $author = $_POST['author'];
-    $subject = $_POST['subject'];
-    $publisher = $_POST['publisher'];
-    $publication_date = $_POST['publicationdate'];
-    $call_number = $_POST['callnumber'];
-    $accession_number = $_POST['accessionnumber'];  
+  $title = $_POST['title'];
+  $subject = $_POST['subject'];
+  $publisher = $_POST['publisher'];
+  $publicationdate = $_POST['publicationdate'];
+  $publicationplace = $_POST['publicationplace'];
+  $volume = $_POST['volume'];
+  $number = $_POST['number'];
+  $series = $_POST['series'];
+  $pages = $_POST['pages'];
+  $abstract = $_POST['abstract'];  
 
-    $query_addarticle = "INSERT INTO articles_table (title, author, subj, publisher, publication_date, call_number, accession_number) 
-                        VALUES ('$title','$author','$subject','$publisher','$publication_date','$call_number','$accession_number')";
+    $query_addarticle = "INSERT INTO articles_table (title, subj, publisher, publicationdate, publicationplace, volume, num, series, pages, abstract) 
+                        VALUES ('$title','$subject','$publisher','$publicationdate','$publicationplace','$volume','$number','$series','$pages','$abstract')";
     $result = @mysqli_query($dbc, $query_addarticle);
 
         if (!$result) {
@@ -148,7 +184,7 @@ if(isset($_POST['addarticle'])){
 
         else{
    
-        echo '<script>alert("User Successfully Added!");
+        echo '<script>alert("Journal Article Successfully Added!");
         window.location.href = "welcome.php";</script>';  
         }
     

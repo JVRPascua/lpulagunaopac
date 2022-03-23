@@ -34,7 +34,6 @@ color: #333;
 }
 
 #navbar {
-    display: flex;
     justify-content: space-between;
     background: #fff;
     color: #fff;
@@ -46,7 +45,6 @@ color: #333;
 }
 
 #navbar ul {
-    display: flex;
     align-items: center;
     list-style: none;
 }
@@ -65,161 +63,96 @@ color: #333;
     font-size: 1rem;
     margin: 0 0.5rem;
     border-radius: 8px;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s;;
+  
 }
 #navbar li a:hover {
     background-color: #fff;
     color: #800000;
 }
 
+#studenttable {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  #studenttable td, #studenttable th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  #studenttable tr:nth-child(even){background-color: #f2f2f2;}
+  
+  #studenttable tr:hover {background-color: #ddd;}
+  
+  #studenttable th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #04AA6D;
+    color: white;
+  }
+  .search-container {
+    float: right;
+  }
+  input[type=text] {
+    padding: 6px;
+    margin-top: 8px;
+    font-size: 17px;
+    border: none;
+  }
+  
+  input[type=text] {
+      border: 1px solid #ccc;  
+    }
+    body {
+    font-family: Arial;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  form.example input[type=text] {
+    padding: 10px;
+    font-size: 17px;
+    border: 1px solid grey;
+    float: left;
+    width: 80%;
+    background: #f1f1f1;
+  }
+  
+  form.example button {
+    float: left;
+    width: 20%;
+    padding: 10px;
+    background: #2196F3;
+    color: white;
+    font-size: 17px;
+    border: 1px solid grey;
+    border-left: none;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background: #0b7dda;
+  }
+  
+  form.example::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
 
-#showcase {
-    background: url(../img/lib.jpg) no-repeat center center/cover;  
-    height: 91.7vh;
-}
+  .dashboardbutton {
+    background-color: white;
+    color: black;
+    border: 2px solid #333;
+    padding: 10px 24px;
+    transition-duration: 0.4s;
+  }
+  .dashboardbutton:hover{
+    background-color: #e7e7e7;
+  }
 
-.showcase-content {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    top: 81px;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    color: #333;
-}
-
-.showcase-content h1 {
-    font-size: 2rem;
-    margin-bottom: 2rem;
-    
-
-}
-
-.showcase-content .btn {
-    font-size: 1rem;
-    padding: 1rem 10rem;
-    transition: color 0.3s, background 0.3s;
-}
-
-.showcase-content .btn:hover {
-    background: #fff;
-    color: #800000;
-
-}
-
-.btn {
-    color: #fff;
-    text-decoration: none;
-    display: inline-block;
-    padding: 1rem 2rem;
-    background-color: #800000;
-    border-radius: 10px;
-    font-weight: bold;
-}
-
-#about {
-    padding: 5rem 0;
-}
-
-#about h2 #services h2{
-    text-align: center;
-    font-size: 3rem;
-    margin-bottom: 3rem;
-
-}
-
-#about h3 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-
-}
-#about h4 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-
-}
-#about h5 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-
-}
-
-#about p.lead {
-    margin-bottom: 1rem;
-
-}
-
-#about .about-content {
-    display: flex;
-}
-
-#about .about-text,
-#about .about-image {
-    flex: 1;
-
-}
-
-#about .about-text {
-    text-align: justify;
-}
-
-#about .about-image img {
-    display: block;
-    margin-left: auto;
-    width: 75%;
-    border-radius: 40%;
-    margin-top: 60px;
-}
-
-#staff {
-    padding: 5rem 0;
-
-}
-
-#staff h3 {
-    text-align: center;
-    margin-bottom: 2rem;
-    font-size: 2rem;
-}
-
-#staff .boxes {
-    display: flex;
-
-}
-
-#staff .box {
-    background: #fff;
-    flex: 1;
-    padding: 3rem;
-    margin: 0 3rem;
-    border-radius: 10px;
-    box-shadow: 2px 2px 5px #d1d1d1;
-    font-size: 1.3rem;
-    text-align: center;
-}
-
-#staff .box i {
-    color: #fff;
-    padding: 1rem;
-    background: #3693ff;
-    border-radius: 50%;
-    margin: 0 1rem;
-    margin-bottom: 2rem;
-    
-
-}
-
-
-footer {
-    padding: 2.5rem;
-
-}
-
-footer p {
-    text-align: center;
-    
-}

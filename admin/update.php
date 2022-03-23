@@ -1,19 +1,22 @@
+
 <?php 
     require_once('connect.php');
 
     if(isset($_POST['update'])){
 
         $title = $_POST['title'];
-        $article = $_POST['article'];
-        $author = $_POST['author'];
         $subject = $_POST['subject'];
         $publisher = $_POST['publisher'];
         $publicationdate = $_POST['publicationdate'];
-        $callnumber = $_POST['callnumber'];
-        $accessionnumber = $_POST['accessionnumber'];
+        $publicationplace = $_POST['publicationplace'];
+        $volume = $_POST['volume'];
+        $number = $_POST['number'];
+        $series = $_POST['series'];
+        $pages = $_POST['pages'];
+        $abstract = $_POST['abstract'];
         $id = $_GET['id'];
 
-    $query = "UPDATE articles_table SET `title`='$title',`author`='$author',`subj`='$subject',`publisher`='$publisher',`publication_date`='$publicationdate',`call_number`='$callnumber',`accession_number`='$accessionnumber' WHERE `id`='$id'";
+    $query = "UPDATE articles_table SET `title`='$title',`subj`='$subject',`publisher`='$publisher',`publicationdate`='$publicationdate',`publicationplace`='$publicationplace',`volume`='$volume',`num`='$number',`series`='$series',`pages`='$pages',`abstract`='$abstract' WHERE `id`='$id'";
     
     $result=@mysqli_query($dbc,$query);
 
@@ -35,12 +38,16 @@
         if($result->num_rows > 0){
             while($row = $result->fetch_assoc()){
               $title = $row['title'];
-              $author = $row['author'];
               $subject = $row['subj'];
               $publisher = $row['publisher'];
-              $publicationdate = $row['publication_date'];
-              $callnumber = $row['call_number'];
-              $accessionnumber = $row['accession_number'];
+              $publicationdate = $row['publicationdate'];
+              $publicationplace = $row['publicationplace'];
+              $volume = $row['volume'];
+              $number = $row['num'];
+              $series = $row['series'];
+              $pages = $row['pages'];
+              $abstract = $row['abstract'];
+              
 
             }
             ?>
@@ -55,8 +62,12 @@
 <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
 <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css'>
 <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.0/css/bootstrapValidator.min.css'><link rel="stylesheet" href="./style.css">
-
+<link rel="stylesheet" href="../css/style.css">
 </head>
+<form action="welcome.php">
+    <input class="button dashboardbutton" type="submit" value="Go Back" />
+</form>
+
 <body>
 <!-- partial:index.partial.html -->
 <div class="container">
@@ -82,11 +93,11 @@
 <!-- Text input-->
 
 <div class="form-group">
-  <label class="col-md-4 control-label" >Author</label> 
+  <label class="col-md-4 control-label" >Subject</label> 
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
   <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-  <input name="author" placeholder="Author"value="<?php echo $author?>" class="form-control"  type="text">
+  <input name="subject" placeholder=""value="<?php echo $subject?>" class="form-control"  type="text">
     </div>
   </div>
 </div>
@@ -94,11 +105,11 @@
 <!-- Text input-->
 
   <div class="form-group"> 
-  <label class="col-md-4 control-label">Subject</label>
+  <label class="col-md-4 control-label">Publisher</label>
     <div class="col-md-4 selectContainer">
     <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-file"></i></span>
-    <input type="text" name="subject" placeholder="Subject" value="<?php echo $subject?>" class="form-control">
+    <input type="text" name="publisher" placeholder="Publisher" value="<?php echo $publisher?>" class="form-control">
       
   </div>
 </div>
@@ -106,11 +117,11 @@
 
 <!-- Text input-->
 <div class="form-group">
-  <label class="col-md-4 control-label">Publisher</label>  
+  <label class="col-md-4 control-label">Publication Date</label>  
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-  <input name="publisher" placeholder="Publisher" class="form-control"value="<?php echo $publisher?>"  type="text">
+  <input name="publicationdate" placeholder="Publication Date" class="form-control"value="<?php echo $publicationdate?>"  type="date">
     </div>
   </div>
 </div>
@@ -118,11 +129,11 @@
 <!-- Text input-->
 
 <div class="form-group">
-  <label class="col-md-4 control-label">Publication Date</label>  
+  <label class="col-md-4 control-label">Publication Place</label>  
   <div class="col-md-4 inputGroupContainer">
   <div class="input-group">
   <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
-  <input  name="publicationdate" placeholder="Publication Date" class="form-control"value="<?php echo $publicationdate?>"  type="date">
+  <input  name="publicationplace" placeholder="Publication Place" class="form-control"value="<?php echo $publicationplace?>"  type="text">
     </div>
   </div>
 </div>
@@ -130,26 +141,54 @@
 <!-- Text input-->
 
 <div class="form-group">
-  <label class="col-md-4 control-label" >Call Number</label> 
+  <label class="col-md-4 control-label" >Volume</label> 
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
   <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-  <input name="callnumber" placeholder="Call Number" class="form-control" value="<?php echo $callnumber?>"  type="text">
+  <input name="volume" placeholder="Volume" class="form-control" value="<?php echo $volume?>"  type="text">
     </div>
   </div>
 </div>
 
 <div class="form-group">
-  <label class="col-md-4 control-label" >Accession Number</label> 
+  <label class="col-md-4 control-label" >Number</label> 
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
   <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-  <input name="accessionnumber" placeholder="Acession Number" value="<?php echo $accessionnumber?>" class="form-control"  type="text">
+  <input name="number" placeholder="Number" value="<?php echo $number?>" class="form-control"  type="text">
     </div>
   </div>
 </div>
 
+<div class="form-group">
+  <label class="col-md-4 control-label" >Series</label> 
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+  <input name="series" placeholder="Series" value="<?php echo $series?>" class="form-control"  type="text">
+    </div>
+  </div>
+</div>
 
+<div class="form-group">
+  <label class="col-md-4 control-label" >Pages</label> 
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+  <input name="pages" placeholder="Pages" value="<?php echo $pages?>" class="form-control"  type="text">
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="col-md-4 control-label" >Abstract</label> 
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+  <input name="abstract" placeholder="Abstract" value="<?php echo $abstract?>" class="form-control"  type="text">
+    </div>
+  </div>
+</div>
 
 <!-- Button -->
 

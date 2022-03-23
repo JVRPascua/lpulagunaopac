@@ -8,7 +8,7 @@ if(isset($_GET['id'])){
     $result = $dbc->query($query);
 
     if($result == TRUE){
-        echo '<script>alert("User Successfully Deleted!")
+        echo '<script>alert("Record Successfully Deleted!")
         window.location.href = "welcome.php";</script>';
     }
     else{
