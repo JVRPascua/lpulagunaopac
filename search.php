@@ -1,7 +1,7 @@
 <form action="opac.php">
     <input class="button dashboardbutton" type="submit" value="Go to Dashboard" />
 </form>
-<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="css/style.css">
 <style>
 
 
