@@ -39,6 +39,19 @@
 <!-- Text input-->
 
 <div class="form-group">
+  <label class="col-md-4 control-label">Author</label>  
+  <div class="col-md-4 inputGroupContainer">
+  <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-file"></i></span>
+  <input  name="author" placeholder="Author" class="form-control"  type="text">
+    </div>
+  </div>
+</div>
+
+
+<!-- Text input-->
+
+<div class="form-group">
   <label class="col-md-4 control-label" >Subject</label> 
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
@@ -97,16 +110,6 @@
 </div>
 
 <div class="form-group">
-  <label class="col-md-4 control-label" >Number</label> 
-    <div class="col-md-4 inputGroupContainer">
-    <div class="input-group">
-  <span class="input-group-addon"><i class="glyphicon glyphicon-file"></i></span>
-  <input name="number" placeholder="Number" class="form-control"  type="text">
-    </div>
-  </div>
-</div>
-
-<div class="form-group">
   <label class="col-md-4 control-label" >Series</label> 
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
@@ -130,8 +133,8 @@
   <label class="col-md-4 control-label" >Abstract</label> 
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
-  <span class="input-group-addon"><i class="glyphicon glyphicon-file"></i></span>
-  <input name="abstract" placeholder="Abstract" class="form-control"  type="text">
+  <span class="input-group-addon"><i ></i></span>
+  <textarea name="abstract" placeholder="Abstract" class="form-control"  type="text" rows="10" cols="50"> </textarea>
     </div>
   </div>
 </div>
@@ -165,18 +168,18 @@ require_once('connect.php');
 if(isset($_POST['addarticle'])){
     
   $title = $_POST['title'];
+  $author = $_POST['author'];
   $subject = $_POST['subject'];
   $publisher = $_POST['publisher'];
   $publicationdate = $_POST['publicationdate'];
   $publicationplace = $_POST['publicationplace'];
   $volume = $_POST['volume'];
-  $number = $_POST['number'];
   $series = $_POST['series'];
   $pages = $_POST['pages'];
   $abstract = $_POST['abstract'];  
 
-    $query_addarticle = "INSERT INTO articles_table (title, subj, publisher, publicationdate, publicationplace, volume, num, series, pages, abstract) 
-                        VALUES ('$title','$subject','$publisher','$publicationdate','$publicationplace','$volume','$number','$series','$pages','$abstract')";
+    $query_addarticle = "INSERT INTO articles_table (title, author, subj, publisher, publicationdate, publicationplace, volume, series, pages, abstract) 
+                        VALUES ('$title', '$author', '$subject','$publisher','$publicationdate','$publicationplace','$volume','$series','$pages','$abstract')";
     $result = @mysqli_query($dbc, $query_addarticle);
 
         if (!$result) {

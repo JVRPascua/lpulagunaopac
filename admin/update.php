@@ -5,18 +5,18 @@
     if(isset($_POST['update'])){
 
         $title = $_POST['title'];
+        $author = $_POST['author'];
         $subject = $_POST['subject'];
         $publisher = $_POST['publisher'];
         $publicationdate = $_POST['publicationdate'];
         $publicationplace = $_POST['publicationplace'];
         $volume = $_POST['volume'];
-        $number = $_POST['number'];
         $series = $_POST['series'];
         $pages = $_POST['pages'];
         $abstract = $_POST['abstract'];
         $id = $_GET['id'];
 
-    $query = "UPDATE articles_table SET `title`='$title',`subj`='$subject',`publisher`='$publisher',`publicationdate`='$publicationdate',`publicationplace`='$publicationplace',`volume`='$volume',`num`='$number',`series`='$series',`pages`='$pages',`abstract`='$abstract' WHERE `id`='$id'";
+    $query = "UPDATE articles_table SET `title`='$title',`author`='$author',`subj`='$subject',`publisher`='$publisher',`publicationdate`='$publicationdate',`publicationplace`='$publicationplace',`volume`='$volume',`series`='$series',`pages`='$pages',`abstract`='$abstract' WHERE `id`='$id'";
     
     $result=@mysqli_query($dbc,$query);
 
@@ -38,12 +38,12 @@
         if($result->num_rows > 0){
             while($row = $result->fetch_assoc()){
               $title = $row['title'];
+              $author = $row['author'];
               $subject = $row['subj'];
               $publisher = $row['publisher'];
               $publicationdate = $row['publicationdate'];
               $publicationplace = $row['publicationplace'];
               $volume = $row['volume'];
-              $number = $row['num'];
               $series = $row['series'];
               $pages = $row['pages'];
               $abstract = $row['abstract'];
@@ -87,6 +87,18 @@
   <div class="input-group">
   <span class="input-group-addon"><i class="glyphicon glyphicon-file"></i></span>
   <input  name="title" placeholder="Title" value="<?php echo $title?>" class="form-control"  type="text">
+    </div>
+  </div>
+</div>
+
+<!-- Text input-->
+
+<div class="form-group">
+  <label class="col-md-4 control-label">Author</label>  
+  <div class="col-md-4 inputGroupContainer">
+  <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-file"></i></span>
+  <input  name="author" placeholder="Author" value="<?php echo $author?>" class="form-control"  type="text">
     </div>
   </div>
 </div>
@@ -151,15 +163,6 @@
   </div>
 </div>
 
-<div class="form-group">
-  <label class="col-md-4 control-label" >Number</label> 
-    <div class="col-md-4 inputGroupContainer">
-    <div class="input-group">
-  <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-  <input name="number" placeholder="Number" value="<?php echo $number?>" class="form-control"  type="text">
-    </div>
-  </div>
-</div>
 
 <div class="form-group">
   <label class="col-md-4 control-label" >Series</label> 
@@ -185,8 +188,8 @@
   <label class="col-md-4 control-label" >Abstract</label> 
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
-  <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-  <input name="abstract" placeholder="Abstract" value="<?php echo $abstract?>" class="form-control"  type="text">
+  <span class="input-group-addon"></span>
+  <textarea name="abstract" placeholder="Abstract" class="form-control"  type="text" rows="10" cols="50"><?php echo $abstract?>"</textarea>
     </div>
   </div>
 </div>

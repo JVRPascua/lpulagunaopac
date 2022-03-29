@@ -42,55 +42,42 @@
       <button type="submit" name="search"> <i class="fa fa-search"></i></button>
     </form>
   </div>
+</br>
+</br>
       
       <h2>
          <?php
             $sql = "SELECT * FROM articles_table";
             $result = @mysqli_query($dbc, $sql);
             if ($result->num_rows > 0) {
-               echo "<table id='studenttable' border='1'>
-               <tr>
-               <th>ID</th>
-               <th>Title</th>
-               <th>Subject</th>
-               <th>Publisher</th>
-               <th>Publication Date</th>
-               <th>Publication Place</th>
-               <th>Volume</th>
-               <th>Number</th>
-               <th>Series</th>
-               <th>Pages</th>
-               <th>Abstract</th>
-               <th>Actions </th>
-               </tr>";
                
                while($row = @mysqli_fetch_array($result)) { ?>
-                  <tr>
-                  <td> <?php echo $row['id'] ?> </td>
-                  <td> <?php echo $row['title'] ?> </td>
-                  <td> <?php echo $row['subj'] ?> </td>
-                  <td> <?php echo $row['publisher'] ?> </td>
-                  <td> <?php echo $row['publicationdate'] ?> </td>
-                  <td> <?php echo $row['publicationplace'] ?> </td>
-                  <td> <?php echo $row['volume'] ?> </td>
-                  <td> <?php echo $row['num'] ?> </td>
-                  <td> <?php echo $row['series'] ?> </td>
-                  <td> <?php echo $row['pages'] ?> </td>
-                  <td> <?php echo $row['abstract'] ?> </td>
-                  <td> <a class="btn btn-primary" href="update.php?id=<?php echo $row['id']?>">Update</a> <a class="btn btn-danger" href="delete.php?id=<?php echo $row['id']?>"  onclick="return confirm('Are you sure you want to delete the journal article?')">Delete</a></td>
-               
-
-               </tr>
+                  <div class="card-column">
+                  <div class="card bg-light text-dark">
+                  <div class="card-body">
+                     <h3 class="card-title"><?php echo $row['title'] ?></h3>
+                     <small class="card-text">Author: <?php echo $row['author'] ?> </small></br>
+                     <small class="card-text">Subject: <?php echo $row['subj'] ?> </small></br>
+                     <small class="card-text">Publication Date: <?php echo $row['publicationdate'] ?> </small></br> 
+                     <small class="card-text">Volume: <?php echo $row['volume'] ?> </small></br>
+                     <small class="card-text">Series: <?php echo $row['series'] ?> </small></br>
+                     <small class="card-text" >Pages: <?php echo $row['pages'] ?> </small> </br></br>
+                     <a href="article.php?id=<?php echo $row['id']?>" class="btn btn-primary">More Details</a>
+                     <a href="update.php?id=<?php echo $row['id']?>" class="btn btn-success">Update</a>
+                     <a href="delete.php?id=<?php echo $row['id']?>" class="btn btn-danger"onclick="return confirm('Are you sure you want to delete the journal article?')" >Delete</a>
+                  </div>
+                  </div>
+                  </div>
+                  
                <?php
                }
-               echo "</table>";
                
              } else {
                echo "NO DATA TO DISPLAY";
                
              }
          ?>
-      </h2>
+
       
 
       <script src="../js/main.js"></script>
