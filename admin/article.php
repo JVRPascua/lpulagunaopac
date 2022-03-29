@@ -104,7 +104,6 @@ body {
                 <div class="card">
                 <h5>Author: <?php echo $row['author'] ?> Subject: <?php echo $row['subj'] ?> Publisher: <?php echo $row['publisher'] ?> Publication Date: <?php echo $row['publicationdate'] ?> Publication Place: <?php echo $row['publicationplace'] ?> Volume: <?php echo $row['volume'] ?> Series: <?php echo $row['series'] ?> Pages: <?php echo $row['pages'] ?></h5>
                 <h2>Abstract</h2>
-                <p>Abstract</p>
                 <p><?php echo $row['abstract'] ?></p>
                 </div>
                </div>
