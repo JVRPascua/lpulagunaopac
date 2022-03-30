@@ -191,7 +191,7 @@
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
   <span class="input-group-addon"><i ></i></span>
-  <textarea name="abstract" value="<?php echo $abstract?>"placeholder="Abstract" class="form-control"  type="text" rows="10" cols="50"> </textarea>
+  <textarea name="abstract" placeholder="Abstract" class="form-control"  type="text" rows="10" cols="50"><?php echo $abstract?></textarea>
     </div>
   </div>
 </div>
