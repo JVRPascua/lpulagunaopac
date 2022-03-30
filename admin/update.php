@@ -4,19 +4,19 @@
 
     if(isset($_POST['update'])){
 
-        $title = $_POST['title'];
-        $author = $_POST['author'];
-        $subject = $_POST['subject'];
-        $publisher = $_POST['publisher'];
-        $publicationdate = $_POST['publicationdate'];
-        $publicationplace = $_POST['publicationplace'];
-        $volume = $_POST['volume'];
-        $series = $_POST['series'];
-        $pages = $_POST['pages'];
-        $abstract = $_POST['abstract'];
+      $author = $_POST['author'];
+      $year = $_POST['yr'];
+      $articletitle = $_POST['articletitle'];
+      $journalname = $_POST['journalname'];
+      $volume = $_POST['volume'];
+      $issue = $_POST['issue'];
+      $pages = $_POST['pages'];
+      $url = $_POST['url'];
+      $publisher = $_POST['publisher'];
+      $abstract = $_POST['abstract']; 
         $id = $_GET['id'];
 
-    $query = "UPDATE articles_table SET `title`='$title',`author`='$author',`subj`='$subject',`publisher`='$publisher',`publicationdate`='$publicationdate',`publicationplace`='$publicationplace',`volume`='$volume',`series`='$series',`pages`='$pages',`abstract`='$abstract' WHERE `id`='$id'";
+    $query = "UPDATE articles_table SET `author`='$author',`yr`='$year',`articletitle`='$articletitle',`journalname`='$journalname',`volume`='$volume',`issue`='$issue',`pages`='$pages',`website`='$url',`publisher`='$publisher',`abstract`='$abstract' WHERE `id`='$id'";
     
     $result=@mysqli_query($dbc,$query);
 
@@ -37,16 +37,17 @@
 
         if($result->num_rows > 0){
             while($row = $result->fetch_assoc()){
-              $title = $row['title'];
+            
               $author = $row['author'];
-              $subject = $row['subj'];
-              $publisher = $row['publisher'];
-              $publicationdate = $row['publicationdate'];
-              $publicationplace = $row['publicationplace'];
+              $year = $row['yr'];
+              $articletitle = $row['articletitle'];
+              $journalname = $row['journalname'];
               $volume = $row['volume'];
-              $series = $row['series'];
+              $issue = $row['issue'];
               $pages = $row['pages'];
-              $abstract = $row['abstract'];
+              $url = $row['website'];
+              $publisher = $row['publisher'];
+              $abstract = $row['abstract']; 
               
 
             }
@@ -77,19 +78,7 @@
 <fieldset>
 
 <!-- Form Name -->
-<legend><center><h2><b>Update Journal Article</b></h2></center></legend><br>
-
-<!-- Text input-->
-
-<div class="form-group">
-  <label class="col-md-4 control-label">Title</label>  
-  <div class="col-md-4 inputGroupContainer">
-  <div class="input-group">
-  <span class="input-group-addon"><i class="glyphicon glyphicon-file"></i></span>
-  <input  name="title" placeholder="Title" value="<?php echo $title?>" class="form-control"  type="text">
-    </div>
-  </div>
-</div>
+<legend><center><h2><b>Add Journal Article</b></h2></center></legend><br>
 
 <!-- Text input-->
 
@@ -98,7 +87,7 @@
   <div class="col-md-4 inputGroupContainer">
   <div class="input-group">
   <span class="input-group-addon"><i class="glyphicon glyphicon-file"></i></span>
-  <input  name="author" placeholder="Author" value="<?php echo $author?>" class="form-control"  type="text">
+  <input  name="author"value="<?php echo $author?> placeholder="Author" class="form-control"  type="text">
     </div>
   </div>
 </div>
@@ -106,11 +95,24 @@
 <!-- Text input-->
 
 <div class="form-group">
-  <label class="col-md-4 control-label" >Subject</label> 
+  <label class="col-md-4 control-label">Year</label>  
+  <div class="col-md-4 inputGroupContainer">
+  <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-file"></i></span>
+  <input  name="year" value="<?php echo $year?> placeholder="Year" class="form-control"  type="text">
+    </div>
+  </div>
+</div>
+
+
+<!-- Text input-->
+
+<div class="form-group">
+  <label class="col-md-4 control-label" >Article Title</label> 
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
-  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-  <input name="subject" placeholder=""value="<?php echo $subject?>" class="form-control"  type="text">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-file"></i></span>
+  <input name="articletitle" value="<?php echo $articletitle?>placeholder="Article Title" class="form-control"  type="text">
     </div>
   </div>
 </div>
@@ -118,35 +120,36 @@
 <!-- Text input-->
 
   <div class="form-group"> 
-  <label class="col-md-4 control-label">Publisher</label>
+  <label class="col-md-4 control-label">Journal Name</label>
     <div class="col-md-4 selectContainer">
     <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-file"></i></span>
-    <input type="text" name="publisher" placeholder="Publisher" value="<?php echo $publisher?>" class="form-control">
+    <input type="text" value="<?php echo $journalname?>name="journalname" placeholder="Journal Name" class="form-control">
       
   </div>
 </div>
 </div>
 
 <!-- Text input-->
-<div class="form-group">
-  <label class="col-md-4 control-label">Publication Date</label>  
-    <div class="col-md-4 inputGroupContainer">
+<div class="form-group"> 
+  <label class="col-md-4 control-label">Volume</label>
+    <div class="col-md-4 selectContainer">
     <div class="input-group">
-        <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-  <input name="publicationdate" placeholder="Publication Date" class="form-control"value="<?php echo $publicationdate?>"  type="date">
-    </div>
+        <span class="input-group-addon"><i class="glyphicon glyphicon-file"></i></span>
+    <input type="text" value="<?php echo $volume?>name="volume" placeholder="Volume" class="form-control">
+      
   </div>
+</div>
 </div>
   
 <!-- Text input-->
 
 <div class="form-group">
-  <label class="col-md-4 control-label">Publication Place</label>  
+  <label class="col-md-4 control-label">Issue</label>  
   <div class="col-md-4 inputGroupContainer">
   <div class="input-group">
-  <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
-  <input  name="publicationplace" placeholder="Publication Place" class="form-control"value="<?php echo $publicationplace?>"  type="text">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+  <input  name="issue"value="<?php echo $issue?> placeholder="Issue" class="form-control" type="text">
     </div>
   </div>
 </div>
@@ -154,32 +157,31 @@
 <!-- Text input-->
 
 <div class="form-group">
-  <label class="col-md-4 control-label" >Volume</label> 
-    <div class="col-md-4 inputGroupContainer">
-    <div class="input-group">
-  <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-  <input name="volume" placeholder="Volume" class="form-control" value="<?php echo $volume?>"  type="text">
-    </div>
-  </div>
-</div>
-
-
-<div class="form-group">
-  <label class="col-md-4 control-label" >Series</label> 
-    <div class="col-md-4 inputGroupContainer">
-    <div class="input-group">
-  <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-  <input name="series" placeholder="Series" value="<?php echo $series?>" class="form-control"  type="text">
-    </div>
-  </div>
-</div>
-
-<div class="form-group">
   <label class="col-md-4 control-label" >Pages</label> 
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
-  <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-  <input name="pages" placeholder="Pages" value="<?php echo $pages?>" class="form-control"  type="text">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-file"></i></span>
+  <input name="pages"value="<?php echo $pages?> placeholder="Pages" class="form-control" type="text">
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="col-md-4 control-label" >Website Source</label> 
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-file"></i></span>
+  <input name="url" value="<?php echo $url?>placeholder="URL" class="form-control"  type="text">
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="col-md-4 control-label" >Publisher</label> 
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-file"></i></span>
+  <input name="publisher" value="<?php echo $publisher?>placeholder="Publisher" class="form-control"  type="text">
     </div>
   </div>
 </div>
@@ -188,8 +190,8 @@
   <label class="col-md-4 control-label" >Abstract</label> 
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
-  <span class="input-group-addon"></span>
-  <textarea name="abstract" placeholder="Abstract" class="form-control"  type="text" rows="10" cols="50"><?php echo $abstract?>"</textarea>
+  <span class="input-group-addon"><i ></i></span>
+  <textarea name="abstract" value="<?php echo $abstract?>placeholder="Abstract" class="form-control"  type="text" rows="10" cols="50"> </textarea>
     </div>
   </div>
 </div>

@@ -36,7 +36,7 @@
    
       <div class="search-container">
       <form action="search.php" method="post">
-      <input type="text" placeholder="Search for title, author, subject, or abstract...." style="width: 500px" name="valueToSearch">
+      <input type="text" placeholder="Search for article title, author, or journal name...." style="width: 500px" name="valueToSearch">
       <button type="submit" name="search"> <i class="fa fa-search"></i></button>
     </form>
   </div>
@@ -50,14 +50,8 @@
                   <div class="card-column">
                   <div class="card bg-light text-dark">
                   <div class="card-body">
-                     <h3 class="card-title"><?php echo $row['title'] ?></h3>
-                     <small class="card-text">Author: <?php echo $row['author'] ?> </small></br>
-                     <small class="card-text">Subject: <?php echo $row['subj'] ?> </small></br>
-                     <small class="card-text">Publication Date: <?php echo $row['publicationdate'] ?> </small></br> 
-                     <small class="card-text">Volume: <?php echo $row['volume'] ?> </small></br>
-                     <small class="card-text">Series: <?php echo $row['series'] ?> </small></br>
-                     <small class="card-text" >Pages: <?php echo $row['pages'] ?> </small> </br></br>
-                     <a href="article.php?id=<?php echo $row['id']?>" class="btn btn-primary">More Details</a>
+                     <h3 class="card-title"><a href="article.php?id=<?php echo $row['id']?>"><?php echo $row['articletitle'] ?>(<?php echo $row['yr']?>)</a></h3>
+                     <small class="card-text"><?php echo $row['author'] ?>. (<?php echo $row['yr']?>). <?php echo $row['articletitle'] ?>. <?php echo $row['journalname'] ?>, <?php echo $row['volume'] ?>(<?php echo $row['issue'] ?>), <?php echo $row['page'] ?>. <?php echo $row['website'] ?><?php echo $row['publisher'] ?></small></br>
                   </div>
                   </div>
                   </div>

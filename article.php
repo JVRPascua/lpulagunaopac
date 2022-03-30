@@ -97,12 +97,12 @@ body {
             if ($result->num_rows > 0) {
                while($row = @mysqli_fetch_array($result)) { ?>
                 <div class="header">  
-                <h1><center><?php echo $row['title'] ?></center></h1>
+                <h1><center><?php echo $row['articletitle'] ?></center></h1>
                 </div>
                 <div class="row">
                 <div class="leftcolumn">
                 <div class="card">
-                <h5>Author: <?php echo $row['author'] ?> Subject: <?php echo $row['subj'] ?> Publisher: <?php echo $row['publisher'] ?> Publication Date: <?php echo $row['publicationdate'] ?> Publication Place: <?php echo $row['publicationplace'] ?> Volume: <?php echo $row['volume'] ?> Series: <?php echo $row['series'] ?> Pages: <?php echo $row['pages'] ?></h5>
+                <h5><?php echo $row['author'] ?>. (<?php echo $row['yr']?>). <?php echo $row['articletitle'] ?>. <?php echo $row['journalname'] ?>, <?php echo $row['volume'] ?>(<?php echo $row['issue'] ?>), <?php echo $row['page'] ?>. <?php echo $row['website'] ?><?php echo $row['publisher'] ?></h5>
                 <h2>Abstract</h2>
                 <p><?php echo $row['abstract'] ?></p>
                 </div>

@@ -27,18 +27,6 @@
 <!-- Text input-->
 
 <div class="form-group">
-  <label class="col-md-4 control-label">Title</label>  
-  <div class="col-md-4 inputGroupContainer">
-  <div class="input-group">
-  <span class="input-group-addon"><i class="glyphicon glyphicon-file"></i></span>
-  <input  name="title" placeholder="Title" class="form-control"  type="text">
-    </div>
-  </div>
-</div>
-
-<!-- Text input-->
-
-<div class="form-group">
   <label class="col-md-4 control-label">Author</label>  
   <div class="col-md-4 inputGroupContainer">
   <div class="input-group">
@@ -48,15 +36,27 @@
   </div>
 </div>
 
+<!-- Text input-->
+
+<div class="form-group">
+  <label class="col-md-4 control-label">Year</label>  
+  <div class="col-md-4 inputGroupContainer">
+  <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-file"></i></span>
+  <input  name="year" placeholder="Year" class="form-control"  type="text">
+    </div>
+  </div>
+</div>
+
 
 <!-- Text input-->
 
 <div class="form-group">
-  <label class="col-md-4 control-label" >Subject</label> 
+  <label class="col-md-4 control-label" >Article Title</label> 
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
   <span class="input-group-addon"><i class="glyphicon glyphicon-file"></i></span>
-  <input name="subject" placeholder="Subject" class="form-control"  type="text">
+  <input name="articletitle" placeholder="Article Title" class="form-control"  type="text">
     </div>
   </div>
 </div>
@@ -64,67 +64,68 @@
 <!-- Text input-->
 
   <div class="form-group"> 
-  <label class="col-md-4 control-label">Publisher</label>
+  <label class="col-md-4 control-label">Journal Name</label>
     <div class="col-md-4 selectContainer">
     <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-file"></i></span>
-    <input type="text" name="publisher" placeholder="Publisher" class="form-control">
+    <input type="text" name="journalname" placeholder="Journal Name" class="form-control">
       
   </div>
 </div>
 </div>
 
 <!-- Text input-->
-<div class="form-group">
-  <label class="col-md-4 control-label">Publication Date</label>  
-    <div class="col-md-4 inputGroupContainer">
+<div class="form-group"> 
+  <label class="col-md-4 control-label">Volume</label>
+    <div class="col-md-4 selectContainer">
     <div class="input-group">
-        <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
-  <input name="publicationdate" placeholder="Publication Date" class="form-control" type="date">
-    </div>
+        <span class="input-group-addon"><i class="glyphicon glyphicon-file"></i></span>
+    <input type="text" name="volume" placeholder="Volume" class="form-control">
+      
   </div>
+</div>
 </div>
   
 <!-- Text input-->
 
 <div class="form-group">
-  <label class="col-md-4 control-label">Publication Place</label>  
+  <label class="col-md-4 control-label">Issue</label>  
   <div class="col-md-4 inputGroupContainer">
   <div class="input-group">
   <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-  <input  name="publicationplace" placeholder="Publication Place" class="form-control" type="text">
+  <input  name="issue" placeholder="Issue" class="form-control" type="text">
     </div>
   </div>
 </div>
 
 <!-- Text input-->
-
-<div class="form-group">
-  <label class="col-md-4 control-label" >Volume</label> 
-    <div class="col-md-4 inputGroupContainer">
-    <div class="input-group">
-  <span class="input-group-addon"><i class="glyphicon glyphicon-file"></i></span>
-  <input name="volume" placeholder="Volume" class="form-control" type="text">
-    </div>
-  </div>
-</div>
-
-<div class="form-group">
-  <label class="col-md-4 control-label" >Series</label> 
-    <div class="col-md-4 inputGroupContainer">
-    <div class="input-group">
-  <span class="input-group-addon"><i class="glyphicon glyphicon-file"></i></span>
-  <input name="series" placeholder="Series" class="form-control"  type="text">
-    </div>
-  </div>
-</div>
 
 <div class="form-group">
   <label class="col-md-4 control-label" >Pages</label> 
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
   <span class="input-group-addon"><i class="glyphicon glyphicon-file"></i></span>
-  <input name="pages" placeholder="Pages" class="form-control"  type="text">
+  <input name="pages" placeholder="Pages" class="form-control" type="text">
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="col-md-4 control-label" >Website Source</label> 
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-file"></i></span>
+  <input name="url" placeholder="URL" class="form-control"  type="text">
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="col-md-4 control-label" >Publisher</label> 
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-file"></i></span>
+  <input name="publisher" placeholder="Publisher" class="form-control"  type="text">
     </div>
   </div>
 </div>
@@ -167,19 +168,19 @@ require_once('connect.php');
 
 if(isset($_POST['addarticle'])){
     
-  $title = $_POST['title'];
   $author = $_POST['author'];
-  $subject = $_POST['subject'];
-  $publisher = $_POST['publisher'];
-  $publicationdate = $_POST['publicationdate'];
-  $publicationplace = $_POST['publicationplace'];
+  $year = $_POST['yr'];
+  $articletitle = $_POST['articletitle'];
+  $journalname = $_POST['journalname'];
   $volume = $_POST['volume'];
-  $series = $_POST['series'];
+  $issue = $_POST['issue'];
   $pages = $_POST['pages'];
+  $url = $_POST['url'];
+  $publisher = $_POST['publisher'];
   $abstract = $_POST['abstract'];  
 
-    $query_addarticle = "INSERT INTO articles_table (title, author, subj, publisher, publicationdate, publicationplace, volume, series, pages, abstract) 
-                        VALUES ('$title', '$author', '$subject','$publisher','$publicationdate','$publicationplace','$volume','$series','$pages','$abstract')";
+    $query_addarticle = "INSERT INTO articles_table (author, yr, articletitle, journalname, volume, issue, pages, website, publisher, abstract) 
+                        VALUES ('$author', '$yr', '$articletitle','$journaltname','$volume','$issue','$pages','$url','$publisher','$abstract')";
     $result = @mysqli_query($dbc, $query_addarticle);
 
         if (!$result) {
