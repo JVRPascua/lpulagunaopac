@@ -5,7 +5,7 @@
     if(isset($_POST['update'])){
 
       $author = $_POST['author'];
-      $year = $_POST['yr'];
+      $year = $_POST['year'];
       $articletitle = $_POST['articletitle'];
       $journalname = $_POST['journalname'];
       $volume = $_POST['volume'];

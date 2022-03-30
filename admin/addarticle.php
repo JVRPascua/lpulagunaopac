@@ -169,7 +169,7 @@ require_once('connect.php');
 if(isset($_POST['addarticle'])){
     
   $author = $_POST['author'];
-  $year = $_POST['yr'];
+  $year = $_POST['year'];
   $articletitle = $_POST['articletitle'];
   $journalname = $_POST['journalname'];
   $volume = $_POST['volume'];
