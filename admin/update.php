@@ -87,7 +87,7 @@
   <div class="col-md-4 inputGroupContainer">
   <div class="input-group">
   <span class="input-group-addon"><i class="glyphicon glyphicon-file"></i></span>
-  <input  name="author"value="<?php echo $author?> placeholder="Author" class="form-control"  type="text">
+  <input  name="author"value="<?php echo $author?>" placeholder="Author" class="form-control"  type="text">
     </div>
   </div>
 </div>
@@ -99,7 +99,7 @@
   <div class="col-md-4 inputGroupContainer">
   <div class="input-group">
   <span class="input-group-addon"><i class="glyphicon glyphicon-file"></i></span>
-  <input  name="year" value="<?php echo $year?> placeholder="Year" class="form-control"  type="text">
+  <input  name="year" value="<?php echo $year?>" placeholder="Year" class="form-control"  type="text">
     </div>
   </div>
 </div>
@@ -112,7 +112,7 @@
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
   <span class="input-group-addon"><i class="glyphicon glyphicon-file"></i></span>
-  <input name="articletitle" value="<?php echo $articletitle?>placeholder="Article Title" class="form-control"  type="text">
+  <input name="articletitle" value="<?php echo $articletitle?>"placeholder="Article Title" class="form-control"  type="text">
     </div>
   </div>
 </div>
@@ -124,7 +124,7 @@
     <div class="col-md-4 selectContainer">
     <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-file"></i></span>
-    <input type="text" value="<?php echo $journalname?>name="journalname" placeholder="Journal Name" class="form-control">
+    <input type="text" value="<?php echo $journalname?>"name="journalname" placeholder="Journal Name" class="form-control">
       
   </div>
 </div>
@@ -136,7 +136,7 @@
     <div class="col-md-4 selectContainer">
     <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-file"></i></span>
-    <input type="text" value="<?php echo $volume?>name="volume" placeholder="Volume" class="form-control">
+    <input type="text" value="<?php echo $volume?>"name="volume" placeholder="Volume" class="form-control">
       
   </div>
 </div>
@@ -149,7 +149,7 @@
   <div class="col-md-4 inputGroupContainer">
   <div class="input-group">
   <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-  <input  name="issue"value="<?php echo $issue?> placeholder="Issue" class="form-control" type="text">
+  <input  name="issue"value="<?php echo $issue?>" placeholder="Issue" class="form-control" type="text">
     </div>
   </div>
 </div>
@@ -161,7 +161,7 @@
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
   <span class="input-group-addon"><i class="glyphicon glyphicon-file"></i></span>
-  <input name="pages"value="<?php echo $pages?> placeholder="Pages" class="form-control" type="text">
+  <input name="pages"value="<?php echo $pages?>" placeholder="Pages" class="form-control" type="text">
     </div>
   </div>
 </div>
@@ -171,7 +171,7 @@
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
   <span class="input-group-addon"><i class="glyphicon glyphicon-file"></i></span>
-  <input name="url" value="<?php echo $url?>placeholder="URL" class="form-control"  type="text">
+  <input name="url" value="<?php echo $url?>"placeholder="URL" class="form-control"  type="text">
     </div>
   </div>
 </div>
@@ -181,7 +181,7 @@
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
   <span class="input-group-addon"><i class="glyphicon glyphicon-file"></i></span>
-  <input name="publisher" value="<?php echo $publisher?>placeholder="Publisher" class="form-control"  type="text">
+  <input name="publisher" value="<?php echo $publisher?>"placeholder="Publisher" class="form-control"  type="text">
     </div>
   </div>
 </div>
@@ -191,7 +191,7 @@
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
   <span class="input-group-addon"><i ></i></span>
-  <textarea name="abstract" value="<?php echo $abstract?>placeholder="Abstract" class="form-control"  type="text" rows="10" cols="50"> </textarea>
+  <textarea name="abstract" value="<?php echo $abstract?>"placeholder="Abstract" class="form-control"  type="text" rows="10" cols="50"> </textarea>
     </div>
   </div>
 </div>
