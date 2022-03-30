@@ -38,7 +38,7 @@
       </div>
       <div class="search-container">
       <form action="search.php" method="post">
-      <input type="text" placeholder="Search for title, subject, or abstract...." style="width: 500px" name="valueToSearch">
+      <input type="text" placeholder="Search for article title, author, or journal name..." style="width: 500px" name="valueToSearch">
       <button type="submit" name="search"> <i class="fa fa-search"></i></button>
     </form>
   </div>
