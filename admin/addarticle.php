@@ -180,7 +180,7 @@ if(isset($_POST['addarticle'])){
   $abstract = $_POST['abstract'];  
 
     $query_addarticle = "INSERT INTO articles_table (author, yr, articletitle, journalname, volume, issue, pages, website, publisher, abstract) 
-                        VALUES ('$author', '$yr', '$articletitle','$journalname','$volume','$issue','$pages','$url','$publisher','$abstract')";
+                        VALUES ('$author', '$year', '$articletitle','$journalname','$volume','$issue','$pages','$url','$publisher','$abstract')";
     $result = @mysqli_query($dbc, $query_addarticle);
 
         if (!$result) {
